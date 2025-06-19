@@ -13,7 +13,7 @@ Este é meu site pessoal (CV online), desenvolvido com HTML e CSS puros, sem fra
 ## Como visualizar
 
 O site está publicado no GitHub Pages em:  
-https://catiamaine.github.io/Projeto-Portf-lio-Pessoal/
+https://catiamaine.github.io/Portfolio-Catia/
 
 ## Tecnologias usadas
 

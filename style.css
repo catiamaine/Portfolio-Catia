@@ -1,0 +1,222 @@
+/* Define altura total da tela e remove margens padrão */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Organiza o corpo em colunas e garante altura mínima */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Remove estilo padrão das listas para aplicar estilo customizado */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout com GRID */
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 colunas iguais para dividir o espaço */
+    gap: 10px; /* Espaço entre colunas */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho e rodapé */
+header {
+    grid-column: 1 / -1; /* Cabeçalho ocupa todas as colunas da grid */
+    background-color: #c57d10;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 0 0 10px 10px;
+    min-height: 100px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 10px;
+}
+
+footer {
+    grid-column: 1 / -1;
+    background-color: #c57d10;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Menu de navegação*/
+nav.menu {
+    grid-column: 1 / -2;
+
+    display: flex; /* Flex para organizar os itens do menu */
+    justify-content: flex-end;
+}
+
+nav.menu ul {
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+nav.menu a {
+    color: white;
+    background-color: #c57d10;
+    min-width: 110px;
+    padding: 8px 16px;
+    border: 1px solid #0a0a0a;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+
+nav.menu a:hover{
+    background-color: #c57d10;
+    color: black;
+}
+
+/* Conteúdo principal */
+.principal {
+    grid-column: 1 / -1; /* Ocupa todas as colunas */
+    margin-left: 10px;
+    flex-grow: 1; /* Permite expandir para preencher espaço disponível */
+    padding: 30px 10px; 
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.conteudo-principal li {
+    margin-bottom: 10px;
+}
+
+.espaco {
+    margin-top: 30px; /* Espaçamento extra para seções específicas */
+}
+
+.projetos ul li {
+    margin-bottom: 15px;
+}
+
+.projetos a {
+    color: #c57d10;
+    font-weight: bold;
+    text-decoration: underline;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.projetos a:hover {
+    color: #000000;
+    text-decoration: none;
+}
+
+/* Formulário de contato */
+.form-contato {
+    max-width: 400px;
+    margin-left: 10px;
+}
+
+.form-contato label {  
+    display: block; /* Cada label ocupa linha inteira */
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-contato input[type="text"],
+.form-contato input[type="email"],
+.form-contato textarea {
+    width: 100%;   /* Ocupa toda a largura disponível */
+    max-width: 400px;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box;/* Inclui padding e borda no tamanho total */
+    resize: vertical;      /* Permite redimensionar verticalmente */
+}
+
+.form-contato input[type="submit"] {
+    background-color: #c57d10;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 400px;
+}
+
+.form-contato input[type="submit"]:hover {
+    background-color: #a06608;
+}
+
+.form-contato {
+    margin: 0;
+    padding: 0 5px;
+}
+
+/* Imagem e Seção sobre mim */
+
+.imagem_minha {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 20px;
+    border: 5px solid #c57d10;
+}
+
+.sobre-mim {
+    display: flex;
+    align-items: flex-start; /* Alinha a foto e o bloco de texto no topo */
+    gap: 20px;
+    position: relative;      
+}
+
+
+/* RESPONSIVIDADE PARA CELULAR */
+@media (max-width: 768px) {
+  .container {
+    display: block;
+    padding: 0 10px;
+    }
+  .principal, header, footer {
+    grid-column: 1 / -1 ;
+    }
+    nav.menu {
+        padding: 10px;
+        justify-content: center;
+    }
+
+    nav.menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav.menu a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+}
